@@ -12,11 +12,12 @@ struct Person {
     let surname: String
     let email: String
     let phone: String
+    let image: String
     var fullName: String {
         "\(name) \(surname)"
     }
     
-    func getPerson() -> [Person] {
+   static func getPerson() -> [Person] {
         
         var persons: [Person] = []
         
@@ -31,7 +32,8 @@ struct Person {
                 name: names.randomElement() ?? "",
                 surname: surnames.randomElement() ?? "",
                 email: emails.randomElement() ?? "",
-                phone: phones.randomElement() ?? "")
+                phone: phones.randomElement() ?? "",
+            image: "personImage")
             
             persons.append(person)
             

@@ -71,6 +71,7 @@
 				6CA4C9B22C24B172003DAD57 /* ContactsTableTableViewController.swift */,
 				6CA4C9B52C24B20A003DAD57 /* ShortInfoTableViewController.swift */,
 				6C77D2DC2C210548008F9C4C /* AboutContact.swift */,
+				6C77D2E62C210549008F9C4C /* Info.plist */,
 			);
 			path = ContactsList.V2;
 			sourceTree = "<group>";
@@ -80,7 +81,6 @@
 			children = (
 				6C77D2D82C210548008F9C4C /* AppDelegate.swift */,
 				6C77D2E32C210549008F9C4C /* LaunchScreen.storyboard */,
-				6C77D2E62C210549008F9C4C /* Info.plist */,
 				6C77D2E12C210549008F9C4C /* Assets.xcassets */,
 				6C77D2DA2C210548008F9C4C /* SceneDelegate.swift */,
 			);

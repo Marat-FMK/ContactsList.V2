@@ -9,30 +9,44 @@ import UIKit
 
 class ContactsTableTableViewController: UITableViewController {
 
+    
+    
+
+    var persons = Person.getPerson()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 80
+    
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        persons.count
+   
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contacts", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+       
+        let person = persons[indexPath.row]
+ 
+        content.text = person.fullName
+        content.image = UIImage(named: person.image)
+        content.imageProperties.cornerRadius = tableView.rowHeight / 2
+        
+        cell.contentConfiguration = content
 
         return cell
     }
+    
     
 
    
@@ -40,8 +54,10 @@ class ContactsTableTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       
+        
+//        guard let aboutContactVC = segue.destination as? AboutContact else { return }
+//        aboutContactVC.person = person
     }
 
 
