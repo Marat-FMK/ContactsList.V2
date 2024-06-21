@@ -24,22 +24,45 @@ class ShortInfoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+     
         return 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shortInfo", for: indexPath)
+        
+        let person = persons[indexPath.section]
         var content = cell.defaultContentConfiguration()
         
-        let person = persons[indexPath.row]
+        switch indexPath.row {
+        case 0: content.text = " 📞 " + person.phone
+        default: content.secondaryText = " 📧 " + person.email
+        }
         
-        content.text = " 📞 " + person.phone
-        content.secondaryText = " 📧 " + person.email
         cell.contentConfiguration = content
         
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//           let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+//           
+//           let person = persons[indexPath.section]
+//           var content = cell.defaultContentConfiguration()
+//           
+//           switch indexPath.row {
+//           case 0:
+//               content.text = person.phoneNumber
+//               content.image = UIImage(systemName: Contacts.phone.rawValue)
+//           default:
+//               content.text = person.email
+//               content.image = UIImage(systemName: Contacts.email.rawValue)
+//           }
+//           
+//           cell.contentConfiguration = content
+//                   
+//           return cell
+//       }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
