@@ -8,7 +8,8 @@
 import UIKit
 
 class AboutContact: UIViewController {
-
+    
+   
     
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var eMailLabel: UILabel!
@@ -20,15 +21,11 @@ class AboutContact: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        phoneNumberLabel.text = person.phone
-        eMailLabel.text = person.email
+        phoneNumberLabel.text = (phoneNumberLabel.text ?? "") + person.phone
+        eMailLabel.text = (eMailLabel.text ?? "") + person.email
         fullNmaeLabel.text = person.fullName
         
         personImage.image = UIImage(named: person.image)
     }
-
-    
-    
-
 }
 

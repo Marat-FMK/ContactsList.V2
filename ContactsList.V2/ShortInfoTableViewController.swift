@@ -10,14 +10,13 @@ import UIKit
 class ShortInfoTableViewController: UITableViewController {
     
     
-    var persons: [Person] = []
+    var persons: [Person]!
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+     
     }
     
     // MARK: - Table view data source
-    
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,36 +28,18 @@ class ShortInfoTableViewController: UITableViewController {
         return 2
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shortInfo", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
         let person = persons[indexPath.row]
         
-        content.text = person.phone
-        content.secondaryText = person.email
+        content.text = " 📞 " + person.phone
+        content.secondaryText = " 📧 " + person.email
         cell.contentConfiguration = content
         
         return cell
     }
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "contacts", for: indexPath)
-//        
-//        var content = cell.defaultContentConfiguration()
-//       
-//        let person = persons[indexPath.row]
-// 
-//        content.text = person.fullName
-//        content.image = UIImage(named: person.image)
-//        content.imageProperties.cornerRadius = tableView.rowHeight / 2
-//        
-//        cell.contentConfiguration = content
-//
-//        return cell
-//    }
-    
-    
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         

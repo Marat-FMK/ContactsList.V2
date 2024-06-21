@@ -9,8 +9,7 @@ import Foundation
 
 class DataManager {
     
-    static let anyContact = DataManager()
-    
+    static let anyContact = DataManager() 
     
     var names: [String] = ["Daria","Marat","Nikita","Polina","Vladislav","Kirill","Svetlana","Kamilla","Roman","Valeriya"]
     

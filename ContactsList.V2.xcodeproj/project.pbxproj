@@ -66,28 +66,20 @@
 		6C77D2D72C210548008F9C4C /* ContactsList.V2 */ = {
 			isa = PBXGroup;
 			children = (
-				6CA4C9B42C24B17B003DAD57 /* add */,
 				6C77D2EE2C24AD13008F9C4C /* Data Manager.swift */,
 				6C77D2EC2C24ACF5008F9C4C /* Person.swift */,
 				6C77D2DE2C210548008F9C4C /* Main.storyboard */,
-				6CA4C9B22C24B172003DAD57 /* ContactsTableTableViewController.swift */,
 				6CA4C9B72C24F7A7003DAD57 /* TabBarViewController.swift */,
+				6CA4C9B22C24B172003DAD57 /* ContactsTableTableViewController.swift */,
 				6CA4C9B52C24B20A003DAD57 /* ShortInfoTableViewController.swift */,
 				6C77D2DC2C210548008F9C4C /* AboutContact.swift */,
-				6C77D2E62C210549008F9C4C /* Info.plist */,
-				6C77D2D82C210548008F9C4C /* AppDelegate.swift */,
-				6C77D2E12C210549008F9C4C /* Assets.xcassets */,
-				6C77D2DA2C210548008F9C4C /* SceneDelegate.swift */,
 				6C77D2E32C210549008F9C4C /* LaunchScreen.storyboard */,
+				6C77D2DA2C210548008F9C4C /* SceneDelegate.swift */,
+				6C77D2E62C210549008F9C4C /* Info.plist */,
+				6C77D2E12C210549008F9C4C /* Assets.xcassets */,
+				6C77D2D82C210548008F9C4C /* AppDelegate.swift */,
 			);
 			path = ContactsList.V2;
-			sourceTree = "<group>";
-		};
-		6CA4C9B42C24B17B003DAD57 /* add */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = add;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

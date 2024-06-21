@@ -9,10 +9,10 @@ import Foundation
 struct Person {
     
     let name: String
-    let surname: String
+    var surname: String
     let email: String
     let phone: String
-    let image: String
+    var image: String
     var fullName: String {
         "\(name) \(surname)"
     }
@@ -26,7 +26,13 @@ struct Person {
         var emails = DataManager.anyContact.emails.shuffled()
         var phones = DataManager.anyContact.phones.shuffled()
         
-        for _ in 1...names.count {
+       if names.contains("Marat")||surnames.contains("FMK"){
+           let person = Person(name: "Marat", surname: "FMK", email: emails.randomElement() ?? "", phone: phones.randomElement() ?? "", image: "Person VIP")
+           persons.append(person)
+          names = names.filter{ $0 != person.name}
+          surnames = surnames.filter{ $0 != person.surname}
+       }
+       for _ in 1...names.count {
             
             let person: Person = Person(
                 name: names.randomElement() ?? "",
@@ -34,7 +40,7 @@ struct Person {
                 email: emails.randomElement() ?? "",
                 phone: phones.randomElement() ?? "",
             image: "personImage")
-            
+           
             persons.append(person)
             
             if names.contains(person.name) || surnames.contains(person.surname)||emails.contains(person.email)||phones.contains(person.phone) {
@@ -46,7 +52,6 @@ struct Person {
         }
         return persons
     }
-    
 }
 
 

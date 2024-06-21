@@ -8,11 +8,10 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-setupControllers()
-        
+        setupControllers()
     }
     
     private func setupControllers() {
@@ -21,10 +20,8 @@ setupControllers()
         
         let contactsVC = viewControllers?.first as! ContactsTableTableViewController
         let shortInfoVC = viewControllers?.last as! ShortInfoTableViewController
-                
-                contactsVC.persons = persons
-                shortInfoVC.persons = persons
-
         
+        contactsVC.persons = persons
+        shortInfoVC.persons = persons
     }
 }
