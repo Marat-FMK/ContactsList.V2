@@ -12,12 +12,12 @@ class ContactsTableTableViewController: UITableViewController {
     
     
 
-    var persons = Person.getPerson()
+    var persons: [Person] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 80
+        tableView.rowHeight = 100
     
     }
 
@@ -54,11 +54,31 @@ class ContactsTableTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
         
-//        guard let aboutContactVC = segue.destination as? AboutContact else { return }
-//        aboutContactVC.person = person
+        guard let aboutContactVC = segue.destination as? AboutContact else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let person = persons[indexPath.row]
+        aboutContactVC.person = person
+        
+        
+        
+//        guard let viewControllers = segue.destination as? UITabBarController else { return }
+//        
+//        guard let shortInfoVC = viewControllers as! ShortInfoTableViewController else { return }
+//        
+//
+//        guard let TBVC = tabBarVC.viewControllers  else { return }
+//
+//        for viewController in TBVC {
+//            if let shortInfoVC = viewController as? ShortInfoTableViewController {
+//                shortInfoVC.persons = persons
+//            }
+//        }
+        
     }
-
+    
+    
+    
+    
 
 }
